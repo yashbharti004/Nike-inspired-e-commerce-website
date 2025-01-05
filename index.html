@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    
+</head>
+<body>
+    <div id="parent">
+        <div id="page-0" style="display: none;padding-top: 2vh;">
+          <div style="display: flex; justify-content: space-between;">
+            <h1 style="font-family: nike; font-size: 5vw;">Your Cart</h1>
+            <button onclick="document.getElementById('page-0').style.display = 'none'" style="height: 40px;width: 40px;;margin-right: 2vw;margin-top: 30px;"><i class="ri-close-line"></i></button>
+          </div>
+          <div style="height: 5vw;width: 100%; position: absolute;display: flex;margin-top: 75vh;justify-content: end;">
+            <h1 id="price" style="font-size: 3vw;margin-right:10vw;"></h1>
+          </div>
+          <!-- <div id="cart-container" style="display: block;">
+               <div style="display: flex;justify-content: space-around;align-items: center;height: 20vh; width: 70vw;background-color: #F6F6F6;border-radius: 100px; margin: 10vw 10vw 10vw 10vw;">
+                <img style="height:10vw; " src="./air-vapormax-2023-flyknit-electric-shoes-1q11q1 - Copy.png" alt="">
+                <h1 style="font-size: 5vh;">name</h1>
+                <h1 style="font-size: 7vh;">price</h1>
+               </div>
+              
+          </div> -->
+
+        </div>
+        <div id="page-1">
+            <video  loop autoplay muted src="videoplayback.webm"></video>
+            <nav>
+                <img src="nike (1).png" alt="">
+                <!-- <h1 id="menu"><i class="ri-menu-line"></i></h1> -->
+                <div id="button-menu" style="display: flex; gap: 15px;">
+                <button id="menu" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><i class="ri-menu-line"></i></button>
+                <button onclick="document.getElementById('page-0').style.display = 'block'" id="cart-order" style="position: relative;padding:0px 0px 10px px ;border:solid white ; font-size: 20px;color: white;background-color: transparent; height: 35px;width: 35px; margin-top: 24px; ">
+                  <i class="ri-shopping-bag-3-line"></i>
+                  <span class="notification-count" id="notification-count">0</span>
+                </button>
+                </div>
+<!-- <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+  <div class="offcanvas-header">
+    <h5 id="menu-content" class="offcanvas-title" id="offcanvasTopLabel">
+        MENU</h5>
+    <button id="close" type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div id="menu-2" class="offcanvas-body">
+    <a href="https://www.nike.com/in/">About<i class="ri-hand"></i></a><br><hr>
+        <a href="https://www.nike.com/in/w/mens-shoes-nik1zy7ok">Shop<i class="ri-shopping-bag-line"></i></a></h5>
+  </div>
+</div> -->
+            </nav>
+           
+        </div>
+        <div id="page-2">
+          <div><h1 >SHOES COLLECTIONS</h1></div>
+          <div id="card">
+          <div id="car1" class="card">
+              <img id="ig1" src="./picture/air-vapormax-2023-flyknit-electric-shoes-1q11q1.png" alt="">
+          </div>
+          <div id="car2" class="card">
+              <img id="ig2" src="./picture/blazer-low-77-vintage-shoes-5Gw9TZ.png" alt="">
+          </div>
+          <div id="car3" class="card">
+              <img id="ig3" src="./picture/cortez-shoes-0VH7qz.png" alt="">
+          </div>
+          <div id="car4" class="card">
+              <img id="ig4" src="./picture/gt-hustle-3-ep-electric-basketball-shoes-VMBvsP.jpeg" alt="">
+          </div>
+          <div id="car5" class="card">
+              <img id="ig5" src="./picture/infinityrn-4-electric-road-running-shoes-FkGQcG.png" alt="">
+          </div>
+          <div id="car6" class="card">
+              <img id="ig6" src="./picture/invincible-3-electric-road-running-shoes-nhn3wf.png" alt="">
+          </div>
+          <div id="car7" class="card">
+              <img id="ig7" src="./picture/vaporfly-3-electric-road-racing-shoes-ZR5Glm.jpeg" alt="">
+          </div>
+          <div id="car8" class="card">
+              <img id="ig8" src="./picture/zoom-vomero-5-shoes-1DsLmz.png" alt="">
+          </div>
+          </div>
+          
+        </div>
+        <div id="page-3">
+            <h1 id="anime">BuyNow</h1>
+        </div>
+        <div id="page-5">
+            <div id="buy-1" class="buy">
+              <img id="shoe-img-same1"  style="height: 450px;position: absolute;" src="./image/KD17+EP.png" alt="">
+              <div onclick="cartUpdate(1)" class="cart-i" style=" height: 35px;width: 35px;;border:solid black ;border-width: 1px;border-radius: 10px;position: absolute; scale: 1;margin: 20px 20px 0px 298px;padding: 3.4px 8px;background-color:black;color: white;cursor: pointer;"><i style="scale: 0.5;" class="ri-shopping-bag-2-line"></i></div>
+              <h1 class="shoe-name"  style="position: absolute; font-family: nike; margin: 10px 40px 100px 20px; color: black;">Name</h1>
+              <h1 class="shoe-price"  style="position: absolute; font-family: nike; margin: 100px 40px 100px 20px;color: black;">3000</h1>
+              <div onclick="change(1,0)" id="c1" style="margin-left:19.5px ; cursor: pointer;z-index: 9;border:solid black;" class="pic-option"><img class="shoe-img"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div onclick="change(1,1)" style="cursor: pointer;z-index: 9;border:solid black;" class="pic-option"><img class="shoe-img1"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div onclick="change(1,2)" id="c2" style="cursor: pointer;z-index: 9;border:solid black;" class="pic-option"><img class="shoe-img2"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div onclick="change(1,3)" id="c3" style="cursor: pointer;z-index: 9;border:solid black;" class="pic-option"><img class="shoe-img3"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div onclick="change(1,4)" id="c4" style="cursor: pointer;z-index: 9;border:solid black;" class="pic-option"><img class="shoe-img4"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div onclick="change(1,5)" id="c5" style="cursor: pointer;z-index: 9;border:solid black;" class="pic-option"><img class="shoe-img5"  style="height: 45px;width: 55px;" src="" alt=""></div>
+            </div>
+          <div id="buy-2" class="buy">
+            <img id="shoe-img-same2"  style="height: 450px;position: absolute; background-color: #F6F6F6;" src="./image/dunk-low-1.jpg" alt="">
+            <div onclick="cartUpdate(2)" class="cart-i" style="height: 35px;width: 35px;;border:solid black ;border-width: 1px;border-radius: 10px;position: absolute; scale: 1;margin: 20px 20px 0px 298px;padding: 3.4px 8px;background-color:black;color: white;cursor: pointer;"><i style="scale: 0.5;" class="ri-shopping-bag-2-line"></i></div>
+            <h1 class="shoe-name"  style="position: absolute; font-family: nike; margin: 10px 40px 100px 20px; color: black;">Name</h1>
+            <h1 class="shoe-price"  style="position: absolute; font-family: nike; margin: 100px 40px 100px 20px;color: black;">3000</h1>
+            <div style="margin-left:19.5px ; cursor: pointer;z-index: 9;border:solid black;" class="pic-option"><img class="shoe-img"  style="height: 45px;width: 55px;" src="./image/dunk-low-1.jpg" alt=""></div>
+            <div style="cursor: pointer;z-index: 9;border:solid black; opacity: 0;" class="pic-option"><img class="shoe-img1"   style="height: 45px;width: 55px;" src="" alt=""></div>
+            <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img2"   style="height: 45px;width: 55px;" src="" alt=""></div>
+            <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img3"  style="height: 45px;width: 55px;" src="" alt=""></div>
+            <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img4"  style="height: 45px;width: 55px;" src="" alt=""></div>
+            <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img5"  style="height: 45px;width: 55px;" src="" alt=""></div>
+           
+          </div>
+          <div id="buy-3" class="buy">
+            <img id="shoe-img-same3"  style="height: 450px;position: absolute;  background-color: #F6F6F6;" src="./image/air-force-1-07-phantom.jpg" alt="">
+            <div onclick="cartUpdate(3)" class="cart-i" style="height: 35px;width: 35px;;border:solid black ;border-width: 1px;border-radius: 10px;position: absolute; scale: 1;margin: 20px 20px 0px 298px;padding: 3.4px 8px;background-color:black;color: white;cursor: pointer;"><i style="scale: 0.5;" class="ri-shopping-bag-2-line"></i></div>
+              <h1 class="shoe-name"  style="position: absolute; font-family: nike; margin: 10px 40px 100px 20px; color: black;">Name</h1>
+              <h1 class="shoe-price"  style="position: absolute; font-family: nike; margin: 100px 40px 100px 20px;color: black;">3000</h1>
+              <div style="margin-left:19.5px ; cursor: pointer;z-index: 9;border:solid black;" class="pic-option"><img class="shoe-img"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img1"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img2"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img3"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img4"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img5"  style="height: 45px;width: 55px;" src="" alt=""></div>
+          </div>
+          <div id="buy-4" class="buy">
+            <img  id="shoe-img-same4"  style="height: 450px;position: absolute;  background-color: #F6F6F6;" src="./image/NIKE+DUNK+LOW+RETRO.png" alt="">
+            <div onclick="cartUpdate(4)" class="cart-i" style="height: 35px;width: 35px;;border:solid black ;border-width: 1px;border-radius: 10px;position: absolute; scale: 1;margin: 20px 20px 0px 298px;padding: 3.4px 8px;background-color:black;color: white;cursor: pointer;"><i style="scale: 0.5;" class="ri-shopping-bag-2-line"></i></div>
+              <h1 class="shoe-name"  style="position: absolute; font-family: nike; margin: 10px 40px 100px 20px; color: black;">Name</h1>
+              <h1 class="shoe-price"  style="position: absolute; font-family: nike; margin: 100px 40px 100px 20px;color: black;">3000</h1>
+              <div style="margin-left:19.5px ; cursor: pointer;z-index: 9;border:solid black;" class="pic-option"><img class="shoe-img"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img1"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img2"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img3"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img4"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img5"  style="height: 45px;width: 55px;" src="" alt=""></div>
+          </div>
+          <div id="buy-5" class="buy">
+            <img id="shoe-img-same5"  style="height: 450px;position: absolute;  background-color: #F6F6F6;" src="./image/NIKE+LUNARGATO.png" alt="">
+            <div onclick="cartUpdate(5)" class="cart-i" style="height: 35px;width: 35px;;border:solid black ;border-width: 1px;border-radius: 10px;position: absolute; scale: 1;margin: 20px 20px 0px 298px;padding: 3.4px 8px;background-color:black;color: white;cursor: pointer;"><i style="scale: 0.5;" class="ri-shopping-bag-2-line"></i></div>
+              <h1 class="shoe-name"  style="position: absolute; font-family: nike; margin: 10px 40px 100px 20px; color: black;">Name</h1>
+              <h1 class="shoe-price"  style="position: absolute; font-family: nike; margin: 100px 40px 100px 20px;color: black;">3000</h1>
+              <div onclick="change(5,0)" style="margin-left:19.5px ; cursor: pointer;z-index: 9;border:solid black;" class="pic-option"><img class="shoe-img"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div onclick="change(5,1)" style="cursor: pointer;z-index: 9;border:solid black;opacity: 1;" class="pic-option"><img class="shoe-img1"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img2"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img3"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img4"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img5"  style="height: 45px;width: 55px;" src="" alt=""></div>
+          </div>
+          <div id="buy-6" class="buy">
+            <img id="shoe-img-same6"  style="height: 450px;position: absolute;  background-color: #F6F6F6;" src="./image/air-jordan-1-low-premium.jpg" alt="">
+            <div onclick="cartUpdate(6)" class="cart-i" style="height: 35px;width: 35px;;border:solid black ;border-width: 1px;border-radius: 10px;position: absolute; scale: 1;margin: 20px 20px 0px 298px;padding: 3.4px 8px;background-color:black;color: white;cursor: pointer;"><i style="scale: 0.5;" class="ri-shopping-bag-2-line"></i></div>
+              <h1 class="shoe-name"  style="position: absolute; font-family: nike; margin: 10px 40px 100px 20px; color: black;">Name</h1>
+              <h1 class="shoe-price"  style="position: absolute; font-family: nike; margin: 100px 40px 100px 20px;color: black;">3000</h1>
+              <div style="margin-left:19.5px ; cursor: pointer;z-index: 9;border:solid black;" class="pic-option"><img class="shoe-img"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img1"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img2"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img3"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img4"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img5"  style="height: 45px;width: 55px;" src="" alt=""></div>
+          </div>
+          <div id="buy-7" class="buy">
+            <img id="shoe-img-same7"  style="height: 450px;position: absolute;  background-color: #F6F6F6;" src="./image/JORDAN+LUKA.png" alt="">
+            <div onclick="cartUpdate(7)" class="cart-i" style="height: 35px;width: 35px;;border:solid black ;border-width: 1px;border-radius: 10px;position: absolute; scale: 1;margin: 20px 20px 0px 298px;padding: 3.4px 8px;background-color:black;color: white;cursor: pointer;"><i style="scale: 0.5;" class="ri-shopping-bag-2-line"></i></div>
+              <h1 class="shoe-name"  style="position: absolute; font-family: nike; margin: 10px 40px 100px 20px; color: black;">Name</h1>
+              <h1 class="shoe-price"  style="position: absolute; font-family: nike; margin: 100px 40px 100px 20px;color: black;">3000</h1>
+              <div onclick="change(7,0)" style="margin-left:19.5px ; cursor: pointer;z-index: 9;border:solid black;" class="pic-option"><img class="shoe-img"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div onclick="change(7,1)" style="cursor: pointer;z-index: 9;border:solid black;opacity: 1;" class="pic-option"><img class="shoe-img1"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div onclick="change(7,2)" style="cursor: pointer;z-index: 9;border:solid black;opacity: 1;" class="pic-option"><img class="shoe-img2"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div onclick="change(7,3)" style="cursor: pointer;z-index: 9;border:solid black;opacity: 1;" class="pic-option"><img class="shoe-img3"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div onclick="change(7,4)" style="cursor: pointer;z-index: 9;border:solid black;opacity: 1;" class="pic-option"><img class="shoe-img4"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img5"  style="height: 45px;width: 55px;" src="" alt=""></div>
+          </div>
+          <div id="buy-8" class="buy">
+            <img id="shoe-img-same8"  style="height: 450px;position: absolute;  background-color: #F6F6F6;" src="./image/AIR+JORDAN4.png" alt="">
+            <div onclick="cartUpdate(8)" class="cart-i" style="height: 35px;width: 35px;;border:solid black ;border-width: 1px;border-radius: 10px;position: absolute; scale: 1;margin: 20px 20px 0px 298px;padding: 3.4px 8px;background-color:black;color: white;cursor: pointer;"><i style="scale: 0.5;" class="ri-shopping-bag-2-line"></i></div>
+              <h1 class="shoe-name"  style="position: absolute; font-family: nike; margin: 10px 40px 100px 20px; color: black;">Name</h1>
+              <h1 class="shoe-price"  style="position: absolute; font-family: nike; margin: 100px 40px 100px 20px;color: black;">3000</h1>
+              <div onclick="change(8,0)" style="margin-left:19.5px ; cursor: pointer;z-index: 9;border:solid black;" class="pic-option"><img class="shoe-img"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div onclick="change(8,1)" id="pic2" style="cursor: pointer;z-index: 9;border:solid black;opacity: 1;" class="pic-option"><img class="shoe-img1"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div onclick="change(8,2)" style="cursor: pointer;z-index: 9;border:solid black;opacity: 1;" class="pic-option"><img class="shoe-img2"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div onclick="change(8,3)" style="cursor: pointer;z-index: 9;border:solid black;opacity: 1;" class="pic-option"><img class="shoe-img3"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div onclick="change(8,4)" style="cursor: pointer;z-index: 9;border:solid black;opacity: 1;" class="pic-option"><img class="shoe-img4"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img5"  style="height: 45px;width: 55px;" src="" alt=""></div>
+          </div>
+          <div id="buy-9" class="buy">
+            <img id="shoe-img-same9"  style="height: 450px;position: absolute;  background-color: #F6F6F6;" src="./image/LEGEND.png" alt="">
+            <div onclick="cartUpdate(9)" class="cart-i" style="height: 35px;width: 35px;;border:solid black ;border-width: 1px;border-radius: 10px;position: absolute; scale: 1;margin: 20px 20px 0px 298px;padding: 3.4px 8px;background-color:black;color: white;cursor: pointer;"><i style="scale: 0.5;" class="ri-shopping-bag-2-line"></i></div>
+              <h1 class="shoe-name"  style="position: absolute; font-family: nike; margin: 10px 40px 100px 20px; color: black;">Name</h1>
+              <h1 class="shoe-price"  style="position: absolute; font-family: nike; margin: 100px 40px 100px 20px;color: black;">3000</h1>
+              <div onclick="change(9,0)" style="margin-left:19.5px ; cursor: pointer;z-index: 9;border:solid black;" class="pic-option"><img class="shoe-img"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div onclick="change(9,1)" style="cursor: pointer;z-index: 9;border:solid black;opacity: 1;" class="pic-option"><img class="shoe-img1"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div onclick="change(9,2)" style="cursor: pointer;z-index: 9;border:solid black;opacity: 1;" class="pic-option"><img class="shoe-img2"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div onclick="change(9,3)" style="cursor: pointer;z-index: 9;border:solid black;opacity: 1;" class="pic-option"><img class="shoe-img3"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div onclick="change(9,4)" style="cursor: pointer;z-index: 9;border:solid black;opacity: 1;" class="pic-option"><img class="shoe-img4"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img5"  style="height: 45px;width: 55px;" src="" alt=""></div>
+          </div>
+          <div id="buy-10" class="buy">
+            <img id="shoe-img-same10"  style="height: 450px;position: absolute;  background-color: #F6F6F6;" src="./image/AIR+JORDAN+5.png" alt="">
+            <div  onclick="cartUpdate(10)" class="cart-i" style="height: 35px;width: 35px;;border:solid black ;border-width: 1px;border-radius: 10px;position: absolute; scale: 1;margin: 20px 20px 0px 298px;padding: 3.4px 8px;background-color:black;color: white;cursor: pointer;"><i style="scale: 0.5;" class="ri-shopping-bag-2-line"></i></div>
+              <h1 class="shoe-name"  style="position: absolute; font-family: nike; margin: 10px 40px 100px 20px; color: black;">Name</h1>
+              <h1 class="shoe-price"  style="position: absolute; font-family: nike; margin: 100px 40px 100px 20px;color: black;">3000</h1>
+              <div style="margin-left:19.5px ; cursor: pointer;z-index: 9;border:solid black;" class="pic-option"><img class="shoe-img"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img1"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img2"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img3"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img4"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img5"  style="height: 45px;width: 55px;" src="" alt=""></div>
+          </div>
+          <div id="buy-11" class="buy">
+            <img id="shoe-img-same11"  style="height: 450px;position: absolute;  background-color: #F6F6F6;" src="./image/NIKE+DUNK+LOW+SE.png" alt="">
+            <div onclick="cartUpdate(11)" class="cart-i" style="height: 35px;width: 35px;;border:solid black ;border-width: 1px;border-radius: 10px;position: absolute; scale: 1;margin: 20px 20px 0px 298px;padding: 3.4px 8px;background-color:black;color: white;cursor: pointer;"><i style="scale: 0.5;" class="ri-shopping-bag-2-line"></i></div>
+              <h1 class="shoe-name"  style="position: absolute; font-family: nike; margin: 10px 40px 100px 20px; color: black;">Name</h1>
+              <h1 class="shoe-price"  style="position: absolute; font-family: nike; margin: 100px 40px 100px 20px;color: black;">3000</h1>
+              <div style="margin-left:19.5px ; cursor: pointer;z-index: 9;border:solid black;" class="pic-option"><img class="shoe-img"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img1"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img2"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img3"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img4"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img5"  style="height: 45px;width: 55px;" src="" alt=""></div>
+          </div>
+          <div id="buy-12" class="buy">
+            <img id="shoe-img-same12"  style="height: 450px;position: absolute;  background-color: #F6F6F6;" src="./image/WMNS+AIR+JORDAN+1+RETRO.jpeg" alt="">
+            <div onclick="cartUpdate(12)" class="cart-i" style="height: 35px;width: 35px;;border:solid black ;border-width: 1px;border-radius: 10px;position: absolute; scale: 1;margin: 20px 20px 0px 298px;padding: 3.4px 8px;background-color:black;color: white;cursor: pointer;"><i style="scale: 0.5;" class="ri-shopping-bag-2-line"></i></div>
+              <h1 class="shoe-name"  style="position: absolute; font-family: nike; margin: 10px 40px 100px 20px; color: black;">Name</h1>
+              <h1 class="shoe-price"  style="position: absolute; font-family: nike; margin: 100px 40px 100px 20px;color: black;">3000</h1>
+              <div style="margin-left:19.5px ; cursor: pointer;z-index: 9;border:solid black;" class="pic-option"><img class="shoe-img"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img1"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img2"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img3"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img4"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img5"  style="height: 45px;width: 55px;" src="" alt=""></div>
+          </div>
+          <div id="buy-13" class="buy">
+            <img id="shoe-img-same13"  style="height: 450px;position: absolute;  background-color: #F6F6F6;" src="./image/GIANNIS+FREAK+6+EP.png" alt="">
+            <div onclick="cartUpdate(13)" class="cart-i" style="height: 35px;width: 35px;;border:solid black ;border-width: 1px;border-radius: 10px;position: absolute; scale: 1;margin: 20px 20px 0px 298px;padding: 3.4px 8px;background-color:black;color: white;cursor: pointer;"><i style="scale: 0.5;" class="ri-shopping-bag-2-line"></i></div>
+              <h1 class="shoe-name"  style="position: absolute; font-family: nike; margin: 10px 40px 100px 20px; color: black;">Name</h1>
+              <h1 class="shoe-price"  style="position: absolute; font-family: nike; margin: 100px 40px 100px 20px;color: black;">3000</h1>
+              <div onclick="change(13,0)" style="margin-left:19.5px ; cursor: pointer;z-index: 9;border:solid black;" class="pic-option"><img class="shoe-img"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div onclick="change(13,1)" style="cursor: pointer;z-index: 9;border:solid black;opacity: 1;" class="pic-option"><img class="shoe-img1"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div onclick="change(13,2)" style="cursor: pointer;z-index: 9;border:solid black;opacity: 1;" class="pic-option"><img class="shoe-img2"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div onclick="change(13,3)" style="cursor: pointer;z-index: 9;border:solid black;opacity: 1;" class="pic-option"><img class="shoe-img3"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img4"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img5"  style="height: 45px;width: 55px;" src="" alt=""></div>
+          </div>
+          <div id="buy-14" class="buy">
+            <img id="shoe-img-same14"  style="height: 450px;position: absolute;  background-color: #F6F6F6;" src="./image/G.T.+CUT+3+EP.png" alt="">
+            <div onclick="cartUpdate(14)" class="cart-i" style="height: 35px;width: 35px;;border:solid black ;border-width: 1px;border-radius: 10px;position: absolute; scale: 1;margin: 20px 20px 0px 298px;padding: 3.4px 8px;background-color:black;color: white;cursor: pointer;"><i style="scale: 0.5;" class="ri-shopping-bag-2-line"></i></div>
+              <h1 class="shoe-name"  style="position: absolute; font-family: nike; margin: 10px 40px 100px 20px; color: black;">Name</h1>
+              <h1 class="shoe-price"  style="position: absolute; font-family: nike; margin: 100px 40px 100px 20px;color: black;">3000</h1>
+              <div onclick="change(14,0)" style="margin-left:19.5px ; cursor: pointer;z-index: 9;border:solid black;" class="pic-option"><img class="shoe-img"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div onclick="change(14,1)" style="cursor: pointer;z-index: 9;border:solid black;opacity: 1;" class="pic-option"><img class="shoe-img1"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div onclick="change(14,2)" style="cursor: pointer;z-index: 9;border:solid black;opacity: 1;" class="pic-option"><img class="shoe-img2"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div onclick="change(14,3)" style="cursor: pointer;z-index: 9;border:solid black;opacity: 1;" class="pic-option"><img class="shoe-img3"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div onclick="change(14,4)" style="cursor: pointer;z-index: 9;border:solid black;opacity: 1;" class="pic-option"><img class="shoe-img4"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img5"  style="height: 45px;width: 55px;" src="" alt=""></div>
+          </div>
+          <div id="buy-15" class="buy">
+            <img id="shoe-img-same15"  style="height: 450px;position: absolute;  background-color: #F6F6F6;" src="./image/AIR+MAX+90.png" alt="">
+            <div  onclick="cartUpdate(15)"class="cart-i" style="height: 35px;width: 35px;;border:solid black ;border-width: 1px;border-radius: 10px;position: absolute; scale: 1;margin: 20px 20px 0px 298px;padding: 3.4px 8px;background-color:black;color: white;cursor: pointer;"><i style="scale: 0.5;" class="ri-shopping-bag-2-line"></i></div>
+              <h1 class="shoe-name"  style="position: absolute; font-family: nike; margin: 10px 40px 100px 20px; color: black;">Name</h1>
+              <h1 class="shoe-price"  style="position: absolute; font-family: nike; margin: 100px 40px 100px 20px;color: black;">3000</h1>
+              <div onclick="change(15,0)" style="margin-left:19.5px ; cursor: pointer;z-index: 9;border:solid black;" class="pic-option"><img class="shoe-img"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div onclick="change(15,1)" style="cursor: pointer;z-index: 9;border:solid black;opacity: 1;" class="pic-option"><img class="shoe-img1"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div onclick="change(15,2)" style="cursor: pointer;z-index: 9;border:solid black;opacity: 1;" class="pic-option"><img class="shoe-img2"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div onclick="change(15,3)" style="cursor: pointer;z-index: 9;border:solid black;opacity: 1;" class="pic-option"><img class="shoe-img3"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img4"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img5"  style="height: 45px;width: 55px;" src="" alt=""></div>
+          </div>
+          <div id="buy-16" class="buy">
+            <img id="shoe-img-same16"  style="height: 450px;position: absolute;  background-color: #F6F6F6;" src="./image/NIKE+AIR+MAX+SC+LEA.png" alt="">
+            <div  onclick="cartUpdate(16)"class="cart-i" style="height: 35px;width: 35px;;border:solid black ;border-width: 1px;border-radius: 10px;position: absolute; scale: 1;margin: 20px 20px 0px 298px;padding: 3.4px 8px;background-color:black;color: white;cursor: pointer;"><i style="scale: 0.5;" class="ri-shopping-bag-2-line"></i></div>
+              <h1 class="shoe-name"  style="position: absolute; font-family: nike; margin: 10px 40px 100px 20px; color: black;">Name</h1>
+              <h1 class="shoe-price"  style="position: absolute; font-family: nike; margin: 100px 40px 100px 20px;color: black;">3000</h1>
+              <div style="margin-left:19.5px ; cursor: pointer;z-index: 9;border:solid black;" class="pic-option"><img class="shoe-img"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img1"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img2"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img3"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img4"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img5"  style="height: 45px;width: 55px;" src="" alt=""></div>
+          </div>
+          <div id="buy-17" class="buy">
+            <img id="shoe-img-same17"  style="height: 450px;position: absolute;  background-color: #F6F6F6;" src="./image/NIKE+FIELD+GENERAL+SP+U.png" alt="">
+            <div  onclick="cartUpdate(17)"class="cart-i" style="height: 35px;width: 35px;;border:solid black ;border-width: 1px;border-radius: 10px;position: absolute; scale: 1;margin: 20px 20px 0px 298px;padding: 3.4px 8px;background-color:black;color: white;cursor: pointer;"><i style="scale: 0.5;" class="ri-shopping-bag-2-line"></i></div>
+              <h1 class="shoe-name"  style="position: absolute; font-family: nike; margin: 10px 40px 100px 20px; color: black;">Name</h1>
+              <h1 class="shoe-price"  style="position: absolute; font-family: nike; margin: 100px 40px 100px 20px;color: black;">3000</h1>
+              <div style="margin-left:19.5px ; cursor: pointer;z-index: 9;border:solid black;" class="pic-option"><img class="shoe-img"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img1"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img2"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img3"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img4"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img5"  style="height: 45px;width: 55px;" src="" alt=""></div>
+          </div>
+          <div id="buy-18" class="buy">
+            <img id="shoe-img-same18"  style="height: 450px;position: absolute;  background-color: #F6F6F6;" src="./image/NIKE+AIR+ZOOM+G.T.+JUMP+2+EP.png" alt="">
+            <div onclick="cartUpdate(18)" class="cart-i" style="height: 35px;width: 35px;;border:solid black ;border-width: 1px;border-radius: 10px;position: absolute; scale: 1;margin: 20px 20px 0px 298px;padding: 3.4px 8px;background-color:black;color: white;cursor: pointer;"><i style="scale: 0.5;" class="ri-shopping-bag-2-line"></i></div>
+              <h1 class="shoe-name"  style="position: absolute; font-family: nike; margin: 10px 40px 100px 20px; color: black;">Name</h1>
+              <h1 class="shoe-price"  style="position: absolute; font-family: nike; margin: 100px 40px 100px 20px;color: black;">3000</h1>
+              <div onclick="change(18,0)" style="margin-left:19.5px ; cursor: pointer;z-index: 9;border:solid black;" class="pic-option"><img class="shoe-img"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div onclick="change(18,1)" style="cursor: pointer;z-index: 9;border:solid black;opacity: 1;" class="pic-option"><img class="shoe-img1"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div onclick="change(18,2)" style="cursor: pointer;z-index: 9;border:solid black;opacity: 1;" class="pic-option"><img class="shoe-img2"   style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img3"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img4"  style="height: 45px;width: 55px;" src="" alt=""></div>
+              <div style="cursor: pointer;z-index: 9;border:solid black;opacity: 0;" class="pic-option"><img class="shoe-img5"  style="height: 45px;width: 55px;" src="" alt=""></div>
+          </div>
+          
+          
+        </div>
+        <div id="page-4">
+          <a href="https://www.instagram.com/nike/"><img src="icons8-instagram-24.png" alt="" srcset=""></a>
+            <a href="https://www.facebook.com/nike"><img src="icons8-facebook-24.png" alt="" srcset=""></a>
+              <a href="https://twitter.com/nike"><img src="icons8-twitter-24.png" alt=""></a>
+        </div>
+        
+        <div  id="page-6">
+          <hr>
+          <div id="anime2">
+            <h1 >Nike </h1><h1 >Nike </h1>
+            <h1 >Nike </h1><h1 >Nike </h1><h1 >Nike </h1><h1 >Nike </h1><h1 >Nike </h1><h1 >Nike </h1><h1 >Nike </h1><h1 >Nike </h1><h1 >Nike </h1><h1 >Nike </h1><h1 >Nike </h1><h1 >Nike </h1><h1 >Nike </h1><h1 >Nike </h1><h1 >Nike </h1><h1 >Nike </h1><h1 >Nike </h1><h1 >Nike </h1><h1 >Nike </h1>
+            <!-- <h1>  Nike Nike NIke NIke Nike NIke NIke Nike NIke NIke Nike NIke NIke Nike NIke</h1> -->
+          </div>
+          
+          <hr>
+        </div>
+        
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
