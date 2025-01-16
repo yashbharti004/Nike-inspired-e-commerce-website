@@ -234,11 +234,8 @@ const nikeShoes = [
 
 
     nikeShoes.forEach((shoe, index) => {
-        // Get the card by its ID
         const card = document.getElementById(`buy-${index + 1}`);
        
-        
-        // If the card exists, populate its content
         if (card) {
             const nameElement = card.querySelector(".shoe-name");
             const priceElement = card.querySelector(".shoe-price");
@@ -250,7 +247,7 @@ const nikeShoes = [
           const imgElement5 = card.querySelector(".shoe-img5");
           
       
-          // Update the content
+        
           nameElement.textContent = shoe.name;
           priceElement.textContent = `${shoe.price}*`;
           imgElement.src = shoe.imgUrl;
@@ -269,10 +266,8 @@ const notificationElement = document.getElementById("notification-count");
 const buy = Array(18);
 
 function updateNotificationCount() {
-  // Update the count
   notificationElement.textContent = cartOrder;
   
-  // Show or hide the badge based on count
   if (cartOrder > 0) {
     notificationElement.style.display = "inline-block";
   } else {
@@ -313,31 +308,27 @@ const cartOrderElement = document.getElementById("cart-order");
 
 
 function appendCartItem(n, shoe) {
-  // Get the container element
   const cartContainer = document.getElementById("page-0");
 
   // Create the main card div
   const cartItem = document.createElement("div");
-  const cartItemId = `cart-item${n}`; // Unique ID for each cart item
+  const cartItemId = `cart-item${n}`;
   cartItem.id = cartItemId;
   cartItem.style.cssText =
     "display: flex;overflow:hidden; justify-content: space-between;padding-left:5vw ;padding-right:5vw;align-items: center; height: 80px; width: 70vw; background-color: #F6F6F6; border-radius: 100px; margin: 1vw 10vw 1vw 5vw;";
 
-  // Create and append the image
   const img = document.createElement("img");
   img.style.cssText = "height: 10vh;border: 0px solid white;border-radius: 100px";
   img.src = nikeShoes[n].imgUrl;
   img.alt = nikeShoes[n].name;
   cartItem.appendChild(img);
 
-  // Create and append the name
   const name = document.createElement("h1");
   name.style.cssText = "font-size: 3vw;";
   name.textContent = nikeShoes[n].name;
   cartItem.appendChild(name);
   
 
-  // Create and append the price
   const price = document.createElement("h1");
   price.style.cssText = "font-size: 2vw;margin-left: 10vw;";
   price.textContent = `₹${nikeShoes[n].price}`;
