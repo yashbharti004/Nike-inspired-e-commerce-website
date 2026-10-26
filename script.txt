@@ -1,0 +1,205 @@
+// Register GSAP ScrollTrigger Plugin
+gsap.registerPlugin(ScrollTrigger);
+
+// Locomotive Scroll Initialization
+const locoScroll = new LocomotiveScroll({
+  el: document.querySelector("#parent"),
+  smooth: true
+});
+locoScroll.on("scroll", ScrollTrigger.update);
+
+ScrollTrigger.scrollerProxy("#parent", {
+  scrollTop(value) {
+    return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+  },
+  getBoundingClientRect() {
+    return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+  },
+  pinType: document.querySelector("#parent").style.transform ? "transform" : "fixed"
+});
+
+ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+ScrollTrigger.refresh();
+
+// GSAP Animations
+gsap.to(".buy", {
+  y: -350,
+  scrollTrigger: {
+    trigger: "#page-5",
+    scroller: "#parent",
+    start: "top 50%",
+    end: "top 20%",
+    scrub: 2
+  }
+});
+
+gsap.from("#count", { y: -1000 });
+gsap.to("#count", { y: -1000, delay: 2 });
+
+gsap.from("#anime", { x: -2500, repeat: -1, duration: 4 });
+
+gsap.to("#anime2", {
+  duration: 2,
+  opacity: 0.5,
+  y: 20,
+  repeat: -1,
+  yoyo: true,
+  ease: "power2.out"
+});
+
+gsap.from("#nikee", {
+  x: 200,
+  scrollTrigger: {
+    trigger: "#page-5",
+    scroller: "#parent",
+    start: "top 20%",
+    end: "bottom bottom",
+    scrub: 2
+  }
+});
+
+// Initialize cart variables
+let cartOrder = 0;
+let price = 0;
+const notificationElement = document.getElementById("notification-count");
+const cartItems = {};
+
+// Product Catalog
+const nikeShoes = [
+  { name: "KD17 EP", price: 13297, images: ["KD17+EP.png", "KD17+EP1.jpeg", "KD17+EP2.png", "KD17+EP3.png", "KD17+EP4.jpeg", "KD17+EP5.png"] },
+  { name: "DunkLow Black", price: 10795, images: ["dunk-low-1.jpg"] },
+  { name: "Air Force 1 '07", price: 11895, images: ["air-force-1-07-phantom.jpg"] },
+  { name: "Nike Dunk Low Retro", price: 8295, images: ["NIKE+DUNK+LOW+RETRO.png"] },
+  { name: "Nike Lunar Gato II", price: 9995, images: ["NIKE+LUNARGATO.png", "NIKE+LUNARGATO1.png"] }
+];
+
+// Populate Shoe Cards Dynamically
+nikeShoes.forEach((shoe, index) => {
+  const card = document.getElementById(`buy-${index + 1}`);
+  if (card) {
+    card.querySelector(".shoe-name").textContent = shoe.name;
+    card.querySelector(".shoe-price").textContent = `₹${shoe.price}`;
+    card.querySelector(".shoe-img").src = `./image/${shoe.images[0]}`;
+  }
+});
+
+// Update Notification Count
+function updateNotificationCount() {
+  notificationElement.textContent = cartOrder;
+  notificationElement.style.display = cartOrder > 0 ? "inline-block" : "none";
+}
+
+// Add/Remove Product from Cart
+function cartUpdate(n) {
+  const shoe = nikeShoes[n - 1];
+
+  if (!cartItems[n]) {
+    cartItems[n] = true;
+    cartOrder++;
+    price += shoe.price;
+    appendCartItem(n - 1);
+  } else {
+    delete cartItems[n];
+    cartOrder--;
+    price -= shoe.price;
+    removeCartItem(n - 1);
+  }
+
+  updateNotificationCount();
+  document.getElementById("price").textContent = `Total: ₹${price}`;
+}
+
+// Append Cart Item
+function appendCartItem(n) {
+  const cartContainer = document.getElementById("page-0");
+  const shoe = nikeShoes[n];
+
+  const cartItem = document.createElement("div");
+  cartItem.id = `cart-item${n}`;
+  cartItem.className = "cart-item";
+  cartItem.style.cssText = "display: flex; justify-content: space-between; align-items: center; padding: 10px; width: 80%; background-color: #F6F6F6; border-radius: 10px; margin: 10px auto;";
+
+  const img = document.createElement("img");
+  img.src = `./image/${shoe.images[0]}`;
+  img.style.cssText = "height: 50px; border-radius: 5px;";
+  cartItem.appendChild(img);
+
+  const name = document.createElement("p");
+  name.textContent = shoe.name;
+  cartItem.appendChild(name);
+
+  const priceTag = document.createElement("p");
+  priceTag.textContent = `₹${shoe.price}`;
+  cartItem.appendChild(priceTag);
+
+  const removeBtn = document.createElement("button");
+  removeBtn.textContent = "X";
+  removeBtn.style.cssText = "background: none; border: none; color: red; font-size: 20px; cursor: pointer;";
+  removeBtn.onclick = () => cartUpdate(n + 1);
+  cartItem.appendChild(removeBtn);
+
+  cartContainer.appendChild(cartItem);
+}
+
+// Remove Cart Item
+function removeCartItem(n) {
+  const cartItem = document.getElementById(`cart-item${n}`);
+  if (cartItem) cartItem.remove();
+}
+
+// Change Shoe Image
+function change(m, n) {
+  const pic = document.getElementById(`shoe-img-same${m}`);
+  const shoe = nikeShoes[m - 1];
+
+  if (n < shoe.images.length) {
+    pic.src = `./image/${shoe.images[n]}`;
+  }
+}
+
+// 📌 Add a "Check Trend" Button in Navbar
+document.addEventListener("DOMContentLoaded", function() {
+    const navbar = document.getElementById("navbar"); // Assuming you have a navbar div
+
+    // Create Button
+    const trendButton = document.createElement("button");
+    trendButton.textContent = "📊 Check Trend";
+    trendButton.style.cssText = "padding: 10px 15px; background: #ff5733; color: white; border: none; cursor: pointer; border-radius: 5px; font-size: 16px;";
+    
+    // Create Hidden File Input
+    const fileInput = document.createElement("input");
+    fileInput.type = "file";
+    fileInput.accept = "image/*"; // Accepts all image formats
+    fileInput.style.display = "none";
+
+    // When button is clicked, open file input
+    trendButton.onclick = () => fileInput.click();
+
+    // When file is selected, process it
+    fileInput.onchange = function(event) {
+        const selectedFile = event.target.files[0];
+        if (selectedFile) {
+            uploadImage(selectedFile);
+        }
+    };
+
+    // Append elements to navbar
+    navbar.appendChild(trendButton);
+    navbar.appendChild(fileInput);
+});
+
+// 📌 Function to Send Image to Flask for Trend Prediction
+function uploadImage(file) {
+    const formData = new FormData();
+    formData.append("file", file);
+
+    fetch("/predict_trend", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(`Prediction: ${data.result}`); // Show result in an alert box
+    })
+    .catch(error => console.error("Error:", error));
+}
